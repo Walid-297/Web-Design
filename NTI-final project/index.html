@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechPulse — Next-Gen Electronics & Tech Gear</title>
+  <meta name="description" content="Premium high-performance electronics, laptops, smartphones, and gaming accessories." />
+  <!-- Tailwind CSS CDN for instant setup -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            accent: '#06b6d4',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col">
+
+  <!-- ==================== nav bar ==================== -->
+  <aside aria-label="Announcement" class="bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-900 border-b border-indigo-500/20 text-xs py-2 px-4 text-center font-medium tracking-wide">
+    <p class="inline-flex items-center gap-2">
+      <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-indigo-500/30">NEW</span>
+      <span>Next-Gen Gaming Laptops with RTX 50-Series GPUs Now Available.</span>
+      <a href="products.html" class="underline hover:text-indigo-300 transition-colors">Shop Now &rarr;</a>
+    </p>
+  </aside>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6" aria-label="Main Navigation">
+
+      <!-- Brand Logo -->
+      <a href="" class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-lg p-1">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">TECH<span class="text-indigo-400">PULSE</span></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <li><a href="index.html" class="text-indigo-400 hover:text-indigo-300 transition-colors">Home</a></li>
+        <li><a href="products.html" class="hover:text-indigo-400 transition-colors">Products</a></li>
+        <li><a href="about.html" class="hover:text-indigo-400 transition-colors">About Us</a></li>
+        <li><a href="contact.html" class="hover:text-indigo-400 transition-colors">Contact</a></li>
+      </ul>
+
+      <!-- Action Utilities -->
+      <div class="flex items-center gap-4">
+        <!-- Search trigger -->
+        <a href="products.html" aria-label="Search products" class="p-2 text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </a>
+
+        <!-- Wishlist -->
+        <a href="wishlist.html" aria-label="View Wishlist" class="relative p-2 text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <span class="absolute -top-1 -right-1 bg-indigo-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" aria-label="View Cart" class="relative p-2 text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="absolute -top-1 -right-1 bg-cyan-500 text-slate-950 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">3</span>
+        </a>
+
+        <!-- User Profile -->
+        <a href="signin.html" class="hidden sm:inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all shadow-lg shadow-indigo-600/20">
+          Sign In
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== PAGE CONTENT CONTAINER ==================== -->
+  <main class="flex-grow">
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative overflow-hidden py-20 lg:py-32 bg-slate-950">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_50%)] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-cyan-400 text-xs font-semibold tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              2026 EDITION RELEASE
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Engineered for <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-200">Peak Hardware Performance.</span>
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+              Explore professional workstation setups, ultra-fast OLED displays, high-fidelity audio equipment, and custom mechanical peripherals built for creators and gamers.
+            </p>
+            <div class="flex flex-wrap items-center gap-4 pt-4">
+              <a href="products.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3.5 rounded-xl transition-all shadow-xl shadow-indigo-600/25 flex items-center gap-2">
+                Browse Catalog
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="about.html" class="bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 font-semibold px-6 py-3.5 rounded-xl transition-all">
+                Why TechPulse
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Graphic Card -->
+          <div class="lg:col-span-5">
+            <div class="relative bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 shadow-2xl">
+              <span class="absolute top-4 right-4 bg-rose-500/10 text-rose-400 text-xs font-bold px-3 py-1 rounded-full border border-rose-500/20">-20% FLAGSHIP OFFER</span>
+              <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Flagship Laptop Workspace Setup" class="rounded-2xl object-cover w-full h-72 sm:h-80 border border-slate-800 mb-6" />
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-bold text-lg text-white">ApexBook Pro M3 Max</h3>
+                  <span class="text-xl font-mono font-bold text-cyan-400">$2,799</span>
+                </div>
+                <p class="text-xs text-slate-400">36GB Unified Memory • 1TB NVMe SSD • 16-inch Liquid Retina XDR</p>
+                <div class="pt-4 flex items-center justify-between border-t border-slate-800/80">
+                  <span class="text-xs text-emerald-400 font-medium flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> In Stock (Ready to Ship)
+                  </span>
+                  <a href="product-details.html" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300">View Specs &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FEATURED CATEGORIES -->
+    <section class="py-16 bg-slate-900/50 border-y border-slate-800/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Explore Categories</h2>
+            <p class="text-slate-400 text-sm mt-1">Targeted hardware precision tailored to your workflow.</p>
+          </div>
+          <a href="products.html" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1">View All <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <!-- Category 1 -->
+          <a href="products.html" class="group bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-5 rounded-2xl text-center transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-200 group-hover:text-white">Laptops</h3>
+            <p class="text-[11px] text-slate-500 mt-1">142 Models</p>
+          </a>
+
+          <!-- Category 2 -->
+          <a href="products.html" class="group bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-5 rounded-2xl text-center transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-200 group-hover:text-white">Smartphones</h3>
+            <p class="text-[11px] text-slate-500 mt-1">98 Models</p>
+          </a>
+
+          <!-- Category 3 -->
+          <a href="products.html" class="group bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-5 rounded-2xl text-center transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-200 group-hover:text-white">Audio Gear</h3>
+            <p class="text-[11px] text-slate-500 mt-1">64 Models</p>
+          </a>
+
+          <!-- Category 4 -->
+          <a href="products.html" class="group bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-5 rounded-2xl text-center transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-200 group-hover:text-white">Monitors</h3>
+            <p class="text-[11px] text-slate-500 mt-1">52 Models</p>
+          </a>
+
+          <!-- Category 5 -->
+          <a href="products.html" class="group bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-5 rounded-2xl text-center transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2V4zm2 6a2 2 0 100 4 2 2 0 000-4zm-6 8a2 2 0 100 4 2 2 0 000-4z"/></svg>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-200 group-hover:text-white">Keyboards</h3>
+            <p class="text-[11px] text-slate-500 mt-1">76 Models</p>
+          </a>
+
+          <!-- Category 6 -->
+          <a href="products.html" class="group bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-5 rounded-2xl text-center transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h0.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-200 group-hover:text-white">Cameras</h3>
+            <p class="text-[11px] text-slate-500 mt-1">31 Models</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED PRODUCTS GRID -->
+    <section class="py-20 bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-12">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Featured Gear</h2>
+            <p class="text-slate-400 text-sm mt-1">Hand-selected hardware crafted for performance excellence.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Product Card 1 -->
+          <article class="group bg-slate-900/80 border border-slate-800 hover:border-indigo-500/40 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5">
+            <div>
+              <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950">
+                <span class="absolute top-3 left-3 z-10 bg-indigo-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">HOT</span>
+                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80" alt="CyberStudio Pro Monitor" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="text-xs text-indigo-400 font-medium mb-1">Monitors</p>
+              <h3 class="font-semibold text-slate-100 text-base group-hover:text-indigo-300 transition-colors">
+                <a href="product-details.html">UltraSharp 32" 4K OLED Monitor</a>
+              </h3>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">240Hz Refresh Rate, 0.03ms response time, 99% DCI-P3 color gamut.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 block">Price</span>
+                <span class="text-lg font-mono font-bold text-white">$1,199.00</span>
+              </div>
+              <button aria-label="Add UltraSharp 32 inch 4K OLED Monitor to Cart" class="p-2.5 bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white rounded-xl transition-all border border-indigo-500/30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product Card 2 -->
+          <article class="group bg-slate-900/80 border border-slate-800 hover:border-indigo-500/40 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5">
+            <div>
+              <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950">
+                <span class="absolute top-3 left-3 z-10 bg-cyan-500 text-slate-950 text-[10px] font-bold px-2.5 py-1 rounded-md">NEW</span>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Noise-Canceling Wireless Headphones" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="text-xs text-indigo-400 font-medium mb-1">Audio Gear</p>
+              <h3 class="font-semibold text-slate-100 text-base group-hover:text-indigo-300 transition-colors">
+                <a href="product-details.html">AeroSound ANC Studio Headphones</a>
+              </h3>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Spatial Audio, 60-hour battery life, active hybrid noise cancellation.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 block">Price</span>
+                <span class="text-lg font-mono font-bold text-white">$349.00</span>
+              </div>
+              <button aria-label="Add AeroSound ANC Studio Headphones to Cart" class="p-2.5 bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white rounded-xl transition-all border border-indigo-500/30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product Card 3 -->
+          <article class="group bg-slate-900/80 border border-slate-800 hover:border-indigo-500/40 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5">
+            <div>
+              <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950">
+                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Mechanical Gaming Keyboard" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="text-xs text-indigo-400 font-medium mb-1">Keyboards</p>
+              <h3 class="font-semibold text-slate-100 text-base group-hover:text-indigo-300 transition-colors">
+                <a href="product-details.html">Vortex 75% Wireless Mechanical Keyboard</a>
+              </h3>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Hot-swappable switches, gasket mount construction, PBT keycaps.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 block">Price</span>
+                <span class="text-lg font-mono font-bold text-white">$189.00</span>
+              </div>
+              <button aria-label="Add Vortex 75 Wireless Mechanical Keyboard to Cart" class="p-2.5 bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white rounded-xl transition-all border border-indigo-500/30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product Card 4 -->
+          <article class="group bg-slate-900/80 border border-slate-800 hover:border-indigo-500/40 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5">
+            <div>
+              <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950">
+                <span class="absolute top-3 left-3 z-10 bg-rose-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">SALE</span>
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Flagship Smartphone" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="text-xs text-indigo-400 font-medium mb-1">Smartphones</p>
+              <h3 class="font-semibold text-slate-100 text-base group-hover:text-indigo-300 transition-colors">
+                <a href="product-details.html">Nexus Ultra 5G Smartphone 512GB</a>
+              </h3>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Titanium frame, 200MP camera system, Snapdragon 8 Gen 3 chipset.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 block">Price</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-lg font-mono font-bold text-white">$1,199</span>
+                  <span class="text-xs font-mono text-slate-500 line-through">$1,399</span>
+                </div>
+              </div>
+              <button aria-label="Add Nexus Ultra 5G Smartphone to Cart" class="p-2.5 bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white rounded-xl transition-all border border-indigo-500/30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CUSTOMER BENEFITS SECTION -->
+    <section class="py-16 bg-slate-900 border-t border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-600/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white text-sm">Express Global Shipping</h3>
+              <p class="text-xs text-slate-400 mt-1">Free delivery on order values over $150 with full live tracking.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-600/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white text-sm">2-Year Full Hardware Warranty</h3>
+              <p class="text-xs text-slate-400 mt-1">Comprehensive hardware coverage and hassle-free repair returns.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-600/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white text-sm">30-Day Money Back Guaranteed</h3>
+              <p class="text-xs text-slate-400 mt-1">Test your gear risk-free with simple, zero-fee return policies.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-600/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white text-sm">Dedicated Tech Engineers</h3>
+              <p class="text-xs text-slate-400 mt-1">24/7 technical customer assistance from certified product specialists.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. NEWSLETTER SECTION -->
+    <section class="py-20 bg-slate-950 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl font-extrabold text-white tracking-tight">Stay Ahead of the Tech Curve</h2>
+        <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto">
+          Subscribe to receive early notification of limited-edition drops, exclusive developer discounts, and firmware updates.
+        </p>
+
+        <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" aria-label="Newsletter Signup">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input type="email" id="newsletter-email" required placeholder="Enter your business email" class="bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 grow" />
+          <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all shadow-lg shadow-indigo-600/25 shrink-0">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-[11px] text-slate-500 mt-3">We respect your data privacy. Unsubscribe anytime with one click.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+
+        <!-- Brand Bio -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <span class="text-lg font-bold text-white">TECH<span class="text-indigo-400">PULSE</span></span>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            TechPulse is a high-performance consumer hardware boutique engineered for developer productivity, extreme gaming setups, and creative studios.
+          </p>
+          <div class="flex items-center gap-4 text-slate-500">
+            <!-- Social Placeholder Icons -->
+            <a href="#" aria-label="Twitter Profile" class="hover:text-indigo-400 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#" aria-label="GitHub Repository" class="hover:text-indigo-400 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-white text-xs uppercase tracking-wider mb-4">Store Catalog</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="products.html" class="hover:text-white transition-colors">Laptops & Workstations</a></li>
+            <li><a href="products.html" class="hover:text-white transition-colors">Smartphones & Tablets</a></li>
+            <li><a href="products.html" class="hover:text-white transition-colors">High-Fi Audio Gear</a></li>
+            <li><a href="products.html" class="hover:text-white transition-colors">Mechanical Keyboards</a></li>
+            <li><a href="products.html" class="hover:text-white transition-colors">4K OLED Displays</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-semibold text-white text-xs uppercase tracking-wider mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="about.html" class="hover:text-white transition-colors">About TechPulse</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Press & Media</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">System Status</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="font-semibold text-white text-xs uppercase tracking-wider mb-4">Customer Support</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="contact.html" class="hover:text-white transition-colors">Help Center & FAQ</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Warranty & Repairs</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Shipping & Returns</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact Engineers</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 TechPulse Electronics Inc. All rights reserved. NTI Graduation Project.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms of Service</a>
+          <a href="#" class="hover:text-slate-400">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
