@@ -1,0 +1,915 @@
+/* Global variables mapping directly to Figma layout file constraints */
+:root {
+  --font-grotesk: 'Familjen Grotesk', sans-serif;
+  --color-black-primary: #201F1F;
+  --color-black-pure: #000000;
+  --color-white: #FFFFFF;
+  --gradient-btn: linear-gradient(90deg, #00D1FF 0%, #1A83FF 100%);
+  --max-content-width: 1320px;
+}
+
+/* --- Core Resets for Buttons and Lists --- */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a, button {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Header Implementation --- */
+.site-header {
+  position: absolute;
+  top: 21px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.brand-logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  display: block;
+  object-fit: contain;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-item {
+  font-family: var(--font-grotesk);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--color-black-pure);
+  transition: opacity 0.2s ease;
+}
+
+.nav-item:hover {
+  opacity: 0.7;
+}
+
+/* Reusable Action Button Utility Block */
+.btn-action {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 36px;
+  background: var(--gradient-btn);
+  border-radius: 100px;
+  font-family: var(--font-grotesk);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 4px 12px rgba(0, 209, 255, 0.25);
+}
+
+/* --- Hero Banner Content Systems --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 860px;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 101px;
+}
+
+/* Centered Central Background Circle Space */
+.hero-central-circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circle-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-content-wrapper {
+  max-width: 1083px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-headline {
+  font-family: var(--font-grotesk);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1.04;
+  letter-spacing: 0.02em;
+  color: var(--color-black-pure);
+  margin-bottom: 35px;
+}
+
+.hero-paragraph {
+  font-family: var(--font-grotesk);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(18px, 2vw, 30px);
+  line-height: 1.26;
+  letter-spacing: 0.02em;
+  color: var(--color-black-pure);
+  max-width: 482px;
+  margin-bottom: 50px;
+}
+
+.hero-cta {
+  font-weight: 400;
+}
+
+/* --- Symmetrical Graphical Positions --- */
+.hero-graphic {
+  position: absolute;
+  bottom: 60px;
+  width: 199px;
+  height: 199px;
+  z-index: 2;
+}
+
+.graphic-left { left: 96px; }
+.graphic-right { right: 96px; }
+
+.graphic-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- Responsive Rules --- */
+@media (max-width: 1200px) {
+  .graphic-left { left: 24px; }
+  .graphic-right { right: 24px; }
+}
+
+@media (max-width: 991px) {
+  .nav-container { display: none; }
+  .hero-graphic {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin: 20px auto 0;
+    display: inline-block;
+  }
+  .hero-section {
+    flex-direction: column;
+    padding-bottom: 60px;
+    height: auto;
+    min-height: auto;
+  }
+  .hero-central-circle {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+/* --- Product Features Section Structural Systems --- */
+/* --- Product Features Section Structural Systems --- */
+.features-split-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end; /* Hard-aligns the entire inner content wrapper to the bottom */
+  justify-content: center;
+  padding: 80px 0 0 0; /* No padding at the bottom so elements sit perfectly flush */
+  box-sizing: border-box;
+
+  background: linear-gradient(to right,
+      #ebe1d9 0%,
+      lch(86.91% 13.39 70.63) 50%,
+      #1F282D 50%,
+      #1F282D 100%
+  );
+}
+
+.features-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end; /* Forces baseline alignment for all images */
+  gap: 0; /* Removed column gap completely so the elements touch side-by-side */
+}
+
+.panel-column {
+  display: flex;
+  width: 100%;
+}
+
+/* --- Fine-Tuning Asset Placements --- */
+
+.column-left {
+  justify-content: flex-end;
+  position: relative;
+}
+
+.feature-asset {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+
+  /* Shift the left card horizontally to the right to lock onto the bottle,
+     and nudge it down slightly to match the baseline alignment */
+  position: relative;
+  right: -25px; /* Pulls the image past its transparent padding directly onto the bottle */
+  bottom: -17px; /* Pulls the card perfectly down to meet the edge */
+}
+
+.bottle-asset {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  margin-top: auto;
+
+  /* Forces the bottle downward to break past any hidden container lines
+     and sit flawlessly on the bottom color border line */
+  position: relative;
+  bottom: -17.9px; /* Explicit vertical push straight down */
+  z-index: 10;   /* Keeps the bottle crisply layered on top of the side cards */
+}
+/* Base container styling matching the blue bounding box alignment */
+.hydration-section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+/* Header layout containing title and view more button */
+.hydration-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.header-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+}
+
+.header-text p {
+  font-size: 1.1rem;
+  color: #333333;
+  margin: 0;
+}
+
+/* Main 3-column grid structure */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px; /* 40px vertical gap, 30px horizontal gap */
+}
+
+/* Individual card styling details */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Image wrapper preserving exact aspect ratios and rounded corners */
+.product-card .image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps images perfectly square */
+  border-radius: 20px; /* Exact curved corners from screenshot */
+  overflow: hidden;
+  margin-bottom: 16px;
+  background-color: #f5f5f5; /* Fallback skeleton color */
+}
+
+.product-card .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Typography for the product labels */
+.product-card .product-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #111111;
+  margin: 0 0 16px 0;
+}
+
+/* Shared Button Styles matching the exact vivid cyan/blue (#0091FF) */
+.btn {
+  display: inline-block;
+  background-color: #0091FF;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #0077D6;
+}
+
+/* Specific button modifiers matching sizes from layout */
+.btn-view-more {
+  padding: 12px 32px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-learn-more {
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive breakpoint for tablets and mobile devices */
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .hydration-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 column stack for mobile phones */
+  }
+}
+/* Container layout matching font smoothing and styles */
+.about-us-section {
+  padding: 80px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #ffffff;
+
+
+  background-image: url('ABOUTUS BG.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Keep it normal, or use 'fixed' for a parallax look */
+}
+
+.about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Left side slightly wider than cards column */
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left side elements typography and layouts */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.about-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #E2E8F0; /* Slightly off-white for hierarchy */
+  margin: 0 0 24px 0;
+}
+
+.about-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #CBD5E1; /* Muted contrast text to match image readability */
+  margin: 0 0 36px 0;
+}
+
+/* Exact gradient pill button from the layout */
+.btn-learn-more {
+  display: inline-block;
+  background: linear-gradient(90deg, #00C6FF 0%, #0072FF 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 14px 36px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-learn-more:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* Right side cards container */
+.about-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Glassmorphism Frosted-Card Effect */
+/* Glassmorphism Frosted-Card Effect */
+.glass-card {
+  display: flex;
+  align-items: center;
+
+  /* Transparent white allows the background image to show through */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* Subtle light borders */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Fixes the number visibility inside the card */
+.card-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff; /* Forces number to be white */
+  margin-right: 24px;
+  min-width: 35px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Fixes the description text visibility inside the card */
+.card-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: #ffffff; /* Forces text to be white */
+}
+
+/* Responsive adjustment for small monitors or mobile layout shifting */
+@media (max-width: 992px) {
+  .about-us-container {
+    grid-template-columns: 1fr; /* Stacks column fields on small widths */
+    gap: 40px;
+  }
+  .about-title {
+    font-size: 2.5rem;
+  }
+}
+/* Container styling for the whole card */
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 20px 0;
+}
+
+/* Base item row */
+.faq-item {
+    border-bottom: 1px solid #f0f2f5;
+    transition: background-color 0.3s ease;
+}
+
+/* Remove border from the last row */
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+/* Header layout (Number, Question, Button) */
+.faq-header {
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Muted serial numbers */
+.faq-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #94a3b8; /* Cool grayish tint */
+    margin-right: 30px;
+    min-width: 50px;
+}
+
+/* Question style */
+.faq-question {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Circular button styling */
+.faq-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* CSS pseudo-elements to draw the '+' and 'x' without extra image files */
+.faq-toggle .toggle-icon::before,
+.faq-toggle .toggle-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #1e293b;
+    transition: background-color 0.3s ease;
+}
+
+/* Horizontal line of the plus sign */
+.faq-toggle .toggle-icon::before {
+    top: 17px;
+    left: 11px;
+    width: 14px;
+    height: 2px;
+}
+
+/* Vertical line of the plus sign */
+.faq-toggle .toggle-icon::after {
+    top: 11px;
+    left: 17px;
+    width: 2px;
+    height: 14px;
+}
+
+/* --- ACTIVE STATE STYLING (.active) --- */
+
+/* Change button to bright blue when active */
+.faq-item.active .faq-toggle {
+    background-color: #0091ff;
+    transform: rotate(45deg); /* Rotates the plus sign into an X */
+}
+
+/* Turns the inside lines white when active */
+.faq-item.active .faq-toggle .toggle-icon::before,
+.faq-item.active .faq-toggle .toggle-icon::after {
+    background-color: #ffffff;
+}
+
+/* Hidden container behavior for accordion body text */
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 40px 0 120px; /* Aligns description cleanly under the question */
+}
+
+/* Reveals text beautifully when active class is present */
+.faq-item.active .faq-body {
+    max-height: 200px; /* High enough to contain your copy block */
+    padding-bottom: 35px;
+}
+
+/* Description Text styling */
+.faq-answer {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+/* Base Section Styling with dark gradient background */
+.contact-section {
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #2c2d2f 0%, #1a1b1c 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Two-column grid system */
+.contact-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal split layout */
+    gap: 40px;
+    align-items: center;
+}
+
+/* Right side content alignment */
+.contact-content {
+    max-width: 500px;
+    width: 100%;
+    justify-self: start;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+}
+
+.contact-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #94a3b8; /* Muted gray text */
+    margin: 0 0 32px 0;
+}
+
+.contact-subtitle a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    letter-spacing: 0.5px;
+}
+
+/* Dark themed fields matching the photo */
+.form-group input,
+.form-group textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Subtle border glow on focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(0, 198, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Styling placeholders to look muted like the image */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #57595d;
+}
+
+/* Prevent textareas from being sized weirdly */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Vibrantly glowing gradient button from design layout */
+.btn-submit {
+    align-self: flex-start;
+    background: linear-gradient(90deg, #00C6FF 0%, #0072FF 100%);
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 14px 44px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+/* Responsive adjustment for tablets & mobile viewports */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Stacks column fields vertically */
+    }
+    .contact-visual {
+        display: none; /* Hides empty space on small layout views */
+    }
+    .contact-content {
+        max-width: 100%;
+    }
+}
+
+/* Footer background styling matching the reference color */
+.site-footer {
+    background-color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #ffffff;
+    padding-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Flex rows configuration */
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- TOP ROW STYLING --- */
+.footer-top {
+    padding-bottom: 24px;
+}
+
+/* Stylized placeholder for the BOTOL logo text */
+.footer-logo h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.footer-nav-primary a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 32px;
+    transition: opacity 0.2s ease;
+}
+
+/* --- MIDDLE ROW STYLING --- */
+.footer-middle {
+    padding-bottom: 40px;
+}
+
+/* Circle styled icon wrappers */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: #444444;
+}
+
+.footer-nav-secondary a {
+    color: #cccccc; /* Slightly muted white for visual separation */
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-left: 40px;
+    transition: color 0.2s ease;
+}
+
+/* Hover effect rules */
+.footer-nav-primary a:hover,
+.footer-nav-secondary a:hover {
+    color: #00c6ff; /* Links highlight into your accent brand color */
+}
+
+/* --- BOTTOM STRIP STYLING --- */
+.footer-bottom {
+    background-color: #151515; /* Darker bottom bar */
+    text-align: center;
+    padding: 18px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #666666;
+    margin: 0;
+}
+
+/* --- RESPONSIVE LAYOUT (Mobile Optimization) --- */
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .footer-nav-primary,
+    .footer-nav-secondary {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-nav-primary a,
+    .footer-nav-secondary a {
+        margin: 0;
+    }
+
+    .footer-middle {
+        flex-direction: column-reverse; /* Keeps links above icons if preferred on small views */
+    }
+}
